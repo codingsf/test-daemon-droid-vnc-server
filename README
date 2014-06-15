@@ -1,35 +1,25 @@
-The droid-VNC-server projects consists in three main modules parts: the daemon, wrapper libs and the GUI.
+Okay PCloud, Show As Is (oPsai).
+====================================================
 
-- Daemon -
-Provides the vnc server functionality, injects input/touch events, clipboard management, etc
-Available in jni/ folder
+oPsai project is a client side branch of PCloud at CERCS.
 
-- Wrapper libs -
-Compiled against the AOSP so everyone can build the daemon/GUI without having to fetch +2GB files.
-Currently there are 2 wrappers, gralloc and flinger.
+Gives contribution to each of founders:
+  - droid-VNC-server (https://github.com/oNaiPs/droid-VNC-server) by oNaiPs
+  - libvncserver (https://github.com/kanaka/libvncserver) by kanaka
+  - android-fb2png (https://code.google.com/p/android-fb2png) by Kyan.ql
+  
 
-Available in nativeMethods/ folder, and precompiled libs in nativeMethods/lib/
 
-- GUI - 
-GUI handles user-friendly control.
-Connects to the daemon using local IPC.
+ndk-build clean && ndk-build -j256 && ./updateExecsAndLibs.sh && ant clean && ant debug && adb install -r bin/droidVNC-debug.apk
 
--------------- Compile C daemon ---------------------
-On project folder:
-  $ ndk-build
-  $ ./updateExecsAndLibs.sh
+The project is being built on Galaxy Tab 3 10.1 GT-P5210 (x86 powered by Intel) with Android version 4.2.2(JDQ39.P5210XXUAMG6), Kernel version 3.4.34-1135839 and CWR. 
 
--------------- Compile Wrapper libs -----------------
-  $ cd <aosp_folder>
-  $ . build/envsetup.sh
-  $ lunch
-  $ ln -s <droid-vnc-folder>/nativeMethods/ external/
+It does not forward correct fb0 to client though it takes correct fb screen shot (without status bar) 15-Jun-2014
 
-To build:
-  $ cd external/nativeMethods
-  $ mm .
-  $ cd <droid-vnc-folder>
-  $ ./updateExecsAndLibs.sh
 
--------------- Compile GUI------- -------------------
-Import using eclipse as a regular Android project
+
+
+
+
+
+Note that the license is based on GNU v2.0 but subject to change.
