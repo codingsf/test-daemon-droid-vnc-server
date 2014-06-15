@@ -12,7 +12,7 @@ Gives contribution to each of founders:
 
 ndk-build clean && ndk-build -j256 && ./updateExecsAndLibs.sh && ant clean && ant debug && adb install -r bin/droidVNC-debug.apk
 
-The project is being built on Galaxy Tab 3 10.1 GT-P5210 (x86 powered by Intel) with Android version 4.2.2(JDQ39.P5210XXUAMG6), Kernel version 3.4.34-1135839 and CWR. 
+The project is being built on Galaxy Tab 3 10.1 GT-P5210 (x86 powered by Intel) with Android version 4.2.2(JDQ39.P5210XXUAMG6), Kernel version 3.4.34-1135839 and CWR version 6.9. 
 
 It does not forward correct fb0 to client though it takes correct fb screen shot (without status bar) 15-Jun-2014
 
@@ -20,6 +20,47 @@ It does not forward correct fb0 to client though it takes correct fb screen shot
 
 
 
+Based on following resources:
+  -x86: 
+  https://software.intel.com/en-us/android/articles/how-to-test-and-debug-ndk-based-android-applications
+  
+  -AOSP
+  http://www.kandroid.org/online-pdk/guide/customization.html (Custom graphics) 
+  http://www.kandroid.org/online-pdk/guide/display_drivers.html (Display drivers)
+  http://source.android.com/devices/reference/hwcomposer_8h_source.html (hw composer line 289)
+  
+  -openSL ES:
+  http://audioprograming.wordpress.com/2012/03/03/android-audio-streaming-with-opensl-es-and-the-ndk/
+  http://www.videolan.org/developers/vlc/modules/audio_output/opensles_android.c
+  http://mobilepearls.com/labs/native-android-api/include/SLES/OpenSLES_Android.h
+  http://mobilepearls.com/labs/native-android-api/ndk/docs/opensles/
+  http://stackoverflow.com/questions/14609759/streaming-mp3-audio-via-socket-communication-using-opensl-es-on-android
+  http://xzpeter.org/?p=254
+  
+  -gstreamer: 
+  http://docs.gstreamer.com/display/GstSDK/Tutorials
+  http://androidxref.com/4.2.2_r1/xref/frameworks/av/media/libstagefright/rtsp/MyTransmitter.h
+  
+  -pulseaudio with androgenizer
+  http://cgit.collabora.com/git/android/platform/external/collabora/libtool.git/tree/libltdl
+  http://www.freedesktop.org/wiki/Software/PulseAudio/Ports/Android/
+  http://blogs.igalia.com/eocanha/2012/01/30/from-source-code-to-ndk-build-using-autotools-and-androgenizer/
+  https://github.com/qdii/androgenizer/blob/master/INSTALL
+  https://forum.openwrt.org/viewtopic.php?id=5775
+  http://lists.gnu.org/archive/html/libtool-patches/2004-11/msg00231.html
+  
+  -libvncserver
+  http://sourceforge.net/p/libvncserver/mailman/libvncserver-common/
+  http://www.cerlalc.org/derechoenlinea/lib/poppler/m4/libjpeg.m4 (libjpeg does not compile?)
+  http://ubuntuforums.org/showthread.php?t=1141593 (libjpeg compile error)
+  http://ehc.ac/p/libvncserver/mailman/libvncserver-common/?style=flat&page=21 (fvncserver assumes 16 bpp)
+  http://sourceforge.net/p/libvncserver/mailman/libvncserver-common/ (continue !!)
+  http://libvncserver.sourceforge.net/doc/html/main_8c_source.html#l00809 (libvncserver main API)
+  http://libvnc.github.io/doc/html/files.html
+  
+  -basic framebuffer
+  http://www.pocketmagic.net/2010/11/android-c-native-development-using-the-ndk-under-windows/#.U5oXC3VdWkB
 
-
+  -CWR:
+  http://forum.xda-developers.com/showthread.php?t=2433853
 Note that the license is based on GNU v2.0 but subject to change.
