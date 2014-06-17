@@ -1,9 +1,11 @@
+Test daemon for demo purpose. 
+
+This is based on droid-vnc-sever and androgenizer. 
 
 Gives contribution to each of founders:
   - droid-VNC-server (https://github.com/oNaiPs/droid-VNC-server) by oNaiPs
   - libvncserver (https://github.com/kanaka/libvncserver) by kanaka
   - android-fb2png (https://code.google.com/p/android-fb2png) by Kyan.ql
-  
 
 
 ndk-build clean && ndk-build -j256 && ./updateExecsAndLibs.sh && ant clean && ant debug && adb install -r bin/droidVNC-debug.apk
