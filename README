@@ -1,7 +1,3 @@
-Okay PCloud, Show As Is (oPsai).
-====================================================
-
-oPsai project is a client side branch of PCloud at CERCS.
 
 Gives contribution to each of founders:
   - droid-VNC-server (https://github.com/oNaiPs/droid-VNC-server) by oNaiPs
@@ -12,9 +8,6 @@ Gives contribution to each of founders:
 
 ndk-build clean && ndk-build -j256 && ./updateExecsAndLibs.sh && ant clean && ant debug && adb install -r bin/droidVNC-debug.apk
 
-The project is being built on Galaxy Tab 3 10.1 GT-P5210 
-(x86 powered by Intel) with Android version 4.2.2(JDQ39.P5210XXUAMG6),
-Kernel version 3.4.34-1135839 and CWR version 6.9. 
 
 15-Jun-2014: 
 It does not forward correct fb0 to client though it takes correct 
